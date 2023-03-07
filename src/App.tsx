@@ -1,18 +1,20 @@
 import "./App.scss";
+import { Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+
+import Experience from "./components/Experience";
 
 function App() {
   return (
-    <div className="App">
-      <Canvas>
-        <ambientLight color="red" />
-        {/* <Box position={[1, 1, 1]} /> */}
-
-        {/* <OrbitControls /> */}
-      </Canvas>
-    </div>
+    <Suspense fallback={null}>
+      <div className="App">
+        <Canvas>
+          <Experience />
+        </Canvas>
+      </div>
+    </Suspense>
   );
 }
 
