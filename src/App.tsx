@@ -2,19 +2,22 @@ import "./App.scss";
 import { Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-
-import Experience from "./components/Experience";
+import { Scene, Camera, Mesh, Light } from "./components";
 
 function App() {
   return (
-    <Suspense fallback={null}>
-      <div className="App">
-        <Canvas>
-          <Experience />
-        </Canvas>
-      </div>
-    </Suspense>
+    <div className="App">
+      <Canvas>
+        <color attach="background" args={["#000"]} />
+        <Scene />
+        <Camera />
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <Mesh />
+          <Light />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }
 

@@ -17,6 +17,7 @@
   "devDependencies": {
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.1",
+    "@react-three/gltfjsx": "^4.3.4",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/three": "^0.149.0",
